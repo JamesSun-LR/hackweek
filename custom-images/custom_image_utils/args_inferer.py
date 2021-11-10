@@ -129,7 +129,7 @@ def _get_dataproc_image_path_by_version(version):
   """Get Dataproc base image name from version."""
   # version regex already checked in arg parser
   parsed_version = version.split(".")
-  if len(parsed_version) == 2:
+  if len(parsed_version) >= 2:
     # The input version must be of format 1.5-debian10 in which case we need to
     # expand it to 1-5-\d+-debian10 so we can do a regexp on the minor version
     parsed_version[1] = parsed_version[1].replace("-", "-\d+-")
